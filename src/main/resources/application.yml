@@ -1,0 +1,39 @@
+spring:
+  security:
+    user:
+      name: kim
+      password: 1234
+      roles: ADMIN
+  devtools:
+    livereload:
+      enabled: true
+  application:
+    name: security-jwt
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    url: jdbc:h2:~/test07;mode=oracle
+  h2:
+    console:
+      path: /h2-console
+      enabled: true #jpa? ?? ?? spring jpa? ???? ????? ???? ?? proxy
+  jpa:
+    hibernate:
+      ddl-auto: update #??? ???? ...
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl #?? ? ??? ???  ^
+    properties:
+      hibernate:
+        #show_sql: true
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+server:
+  port: 8085
+
+jwt:
+  secret: 54704a0a1dd2de821a0dd99be5b15afe5f76757659660bf0bbe2161ea71cab31
+logging:
+  level:
+    org:
+      springframework=DEBUG:
